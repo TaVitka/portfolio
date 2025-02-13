@@ -23,6 +23,7 @@
   --color-dark: #525753;
   --color-gray: #9A9FA8;
   --color-green: #3C801C;
+  --color-overlay: hsla(210, 8%, 16%, 0.4);
 
   /* radius */
   --radius-main: 24px;

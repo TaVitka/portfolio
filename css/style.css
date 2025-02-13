@@ -7,6 +7,15 @@ body {
   background-color: var(--color-white);
 }
 
+body {
+  position: relative;
+}
+
+body.overflow {
+  height: 100%;
+  overflow-y: hidden;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 var(--container-offset);
@@ -14,13 +23,31 @@ body {
   max-width: var(--container-width);
 }
 
+.overlay {
+  position: absolute;
+  z-index: -100;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  transition: background-color 0.3s ease-in-out, filter 0.4s ease-in;
+}
+
+.overlay.active {
+  background-color: var(--color-overlay);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+  pointer-events: all;
+}
+
 section {
-  padding: clamp(32px, 6rem, 64px) 0;
+  padding: clamp(32px, 6vw, 64px) 0;
 }
 
 section h2,
 footer h2  {
-  margin: 0 auto clamp(40px, 4rem, 80px);
+  margin: 0 auto clamp(30px, 5vw, 40px);
 }
 
 .btn,
@@ -442,12 +469,17 @@ footer h2  {
     text-align: right;
   }
 
-  .hero__content>p {
+  .hero__content>p,
+  .hero__content h1 {
     text-align: center;
   }
 
   .hero__links {
     justify-content: space-evenly;
+  }
+
+  .about h2 {
+    margin-inline: auto;
   }
 }
 
