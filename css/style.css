@@ -50,6 +50,10 @@ footer h2  {
   margin: 0 auto clamp(30px, 5vw, 40px);
 }
 
+section[id] {
+  scroll-margin-top: 40px;
+}
+
 .btn,
 .btn.selected {
   display: inline-block;
